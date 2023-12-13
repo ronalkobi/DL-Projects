@@ -1,5 +1,5 @@
 import logging
-
+from typing import Any
 import mlflow
 import numpy as np
 import pandas as pd
@@ -16,12 +16,12 @@ from typing import Tuple
 
 @step(experiment_tracker=experiment_tracker.name)
 def evaluation(
-    model: RegressorMixin, x_test: pd.DataFrame, y_test: pd.Series
+    model: Any, x_test: pd.DataFrame, y_test: pd.Series
 ) -> Tuple[Annotated[float, "r2_score"], Annotated[float, "rmse"]]:
 
     """
     Args:
-        model: RegressorMixin
+        model: Any
         x_test: pd.DataFrame
         y_test: pd.Series
     Returns:

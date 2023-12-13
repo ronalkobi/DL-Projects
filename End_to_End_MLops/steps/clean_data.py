@@ -8,9 +8,6 @@ from End_to_End_MLops.model.data_cleaning import (
     DataPreprocessStrategy,
 )
 
-
-
-
 from typing_extensions import Annotated
 
 # from zenml.steps import Output, step
@@ -19,7 +16,7 @@ from zenml import step
 
 @step
 def clean_data(
-    data: pd.DataFrame,
+        data: pd.DataFrame,
 ) -> Tuple[
     Annotated[pd.DataFrame, "x_train"],
     Annotated[pd.DataFrame, "x_test"],

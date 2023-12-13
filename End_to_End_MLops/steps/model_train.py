@@ -1,4 +1,5 @@
 import logging
+from typing import Any
 
 import mlflow
 import pandas as pd
@@ -25,7 +26,7 @@ def train_model(
     y_train: pd.Series,
     y_test: pd.Series,
     config: ModelNameConfig,
-) -> RegressorMixin:
+    ) -> Any:
     """
     Args:
         x_train: pd.DataFrame
@@ -33,7 +34,7 @@ def train_model(
         y_train: pd.Series
         y_test: pd.Series
     Returns:
-        model: RegressorMixin
+        model: Any
     """
     try:
         model = None
